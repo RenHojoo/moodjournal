@@ -12,5 +12,13 @@
     <div id="root"></div>
     <!-- Vite entry point -->
     <script type="module" src="/src/app.tsx"></script>
+    <!-- service worker registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+          .then(() => console.log('Service Worker registered'))
+          .catch(console.error);
+      }
+    </script>
   </body>
 </html>
